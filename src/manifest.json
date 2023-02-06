@@ -1,14 +1,14 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "",
     "description": "",
     "version": "0.0.1",
     "author": "",
     "permissions": [
         "activeTab",
-        "scripting"
+        "nativeMessaging"
     ],
-    "action": {
+    "browser_action": {
         "default_icon": {
             "64": "icon.png"
         },
@@ -16,8 +16,7 @@
         "default_popup": ""
     },
     "background": {
-        "service_worker": "background.js",
-        "type": "module"
+        "scripts": ["background.js"]
     },
     "content_scripts": [
         {
