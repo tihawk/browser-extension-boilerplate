@@ -1,5 +1,8 @@
 const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
+
+const browser = process.env.BROWSER || 'chrome'
 module.exports = {
    mode: "production",
    entry: {
@@ -25,9 +28,10 @@ module.exports = {
    plugins: [
       new CopyPlugin({
          patterns: [
-            {from: ".", to: ".", context: "public"},
-            {from: 'src/manifest.json', to: '.'}
+            {from: '.', to: '.', context: 'public/images'},
+            {from: `${browser}_manifest.json`, to: '../dist/manifest.json', context: 'public/manifest'}
         ]
       }),
+      new Dotenv(),
    ],
 }

@@ -1,0 +1,1 @@
+export type BrowserT = 'chrome' | 'firefox' | 'edge'
