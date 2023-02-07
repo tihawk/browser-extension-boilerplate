@@ -34,6 +34,8 @@ module.exports = {
             {from: `${browser}_manifest.json`, to: '../dist/manifest.json', context: 'public/manifest'}
         ]
       }),
-      new Dotenv(),
+      new Dotenv({
+         systemvars: true
+      }),
    ],
 }

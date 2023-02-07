@@ -5,8 +5,8 @@ A TypeScript boilerplate for writing browser extensions for Chrome, Firefox and 
 
 ## Building
 
-The extension can be built for one of the following browsers at a time: Chrome, Firefox, Edge. This requires two steps.
-1. Edit the `.env` file, by adding a variable `BROWSER=<chrome|firefox|edge>` with the desired browser
+The extension can be built for one of the following browsers at a time: Chrome, Firefox, Edge.
+1. First time after cloning, run `npm install`
 2. Run `npm run build:<browser>` where `<browser>` can be `chrome|firefox|edge`
 
 The bundled files will be located in the `dist/` directory.
