@@ -6,7 +6,8 @@ const browserType: BrowserT = process.env.BROWSER as BrowserT
 
 console.log('background is a go')
 
-getBrowserAction().onClicked.addListener((tab) => {
-    console.log('button clicked on tab', tab)
-    browser.tabs.sendMessage(tab.id ? tab.id : -1, "hello")
+browser.runtime.onMessage.addListener((message, sender) => {
+    console.log(sender)
+    console.log('button clicked on tab', message)
+    browser.tabs.sendMessage(message.id ? message.id : -1, "hello!")
 })
